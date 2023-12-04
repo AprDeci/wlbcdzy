@@ -26,14 +26,25 @@ public class userService {
         usermapper usermapper = sqlSession.getMapper(usermapper.class);
         user user = usermapper.select(username,password);
         sqlSession.close();
-        return user;
+        if (user != null) {
+            return user;
+        } else  {
+            return null;
+        }
     }
 
-    public user selectByusername(String username){
+    public user selectByusername(String username,String password){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         usermapper usermapper = sqlSession.getMapper(usermapper.class);
         user user = usermapper.selectByusername(username);
         sqlSession.close();
+        if(user == null) {
+            return null;
+        }
+        if (!user.getPassword().equals(password)){
+            return null;
+        }
         return user;
+
     }
 }

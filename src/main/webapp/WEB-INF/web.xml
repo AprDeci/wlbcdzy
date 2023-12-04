@@ -8,4 +8,13 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
     http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name>Archetype Created Web Application</display-name>
+  <!-- 图形验证码servlet -->
+  <servlet>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <servlet-class>com.wf.captcha.servlet.CaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <url-pattern>/captcha</url-pattern>
+  </servlet-mapping>
 </web-app>

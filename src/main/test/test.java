@@ -24,7 +24,6 @@ public class test {
         usermapper usermapper = sqlSession.getMapper(usermapper.class);
         try {
             user user = new user(username, password, 1);
-            usermapper.addd();
             System.out.println("注册成功");
             sqlSession.close();
         }catch(Exception e){
@@ -35,7 +34,7 @@ public class test {
     @Test
     public void testselect(){
         userService userservice = new userService();
-        user user = userservice.selectByusername("123");
+        user user = userservice.selectByusername("123","123");
         System.out.println(user.toString());
 
     }

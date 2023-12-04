@@ -13,7 +13,6 @@ public interface usermapper {
     @Select("select * from user where username=#{username}")
     user selectByusername(@Param("username")String username);
 
-    @Insert("INSERT INTO user VALUES(NULL,1222000,123,1)")
-    void addd();
+
 }
 
