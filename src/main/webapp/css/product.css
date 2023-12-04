@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    left: 15%;
+}
+.tr .list{
+    display: inline-block;
+}
+.tr{
+    width: 28%;
+    height: 100vh;
+}
+.list{
+    position: relative;
+    left: 2%;
+    width: 70%;
+    height: 100vh;
+    padding-top: 43px;
+}
+#title{
+    color: rgb(255, 196, 0);
+    font-size: 2rem;
+    margin: 10px;
+}
+hr{
+    border:1px black solid ;
+}
+ul{
+    margin: 10px;
+    list-style-type: none;
+}
+li{
+    padding-left: 30px;
+    font-size: large;
+    margin-bottom: 20px;
+}
+li a{
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+.details img{
+    width: 400px;
+    height: 300px;
+    margin: 20px;
+    position: relative;
+
+}
+.intro{
+    position: absolute;
+    left: 430px;
+    top: 80px;
+}
+.intro p{
+    color: gray;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.xiangqing{
+    margin: 20px;
+}
+.xiangqing p:first-child{
+    color: orange;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.xiangqing p:nth-last-child(1){
+    font-size: 1.2rem;
+}

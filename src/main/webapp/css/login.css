@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    justify-content: center;
+    align-items: center;
+    background-image: url(../imgs/login.jpg);
+}
+#login-register-div{
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius:15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+}
+
+span{
+    cursor:pointer;
+}
+#login{
+    position: absolute;
+
+}
+#register{
+    position: absolute;
+    display: none;
+}
+
+#login, #register {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+
+}
+
+#login span, #register span {
+    font-weight: bold;
+}
+
+#login form, #register form {
+    margin-top: 10px;
+}
+
+#login input[type="text"],
+#login input[type="password"],
+#register input[type="text"],
+#register input[type="password"] {
+    width: 95%;
+    height: 25px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#login input[type="checkbox"]{
+    margin-bottom: 20px;
+}
+
+#login input[type="submit"],
+#register input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#login input[type="submit"]:hover,
+#register input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#lregister,
+#rlogin {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: #4CAF50;
+    cursor: pointer;
+}
+
+#lregister:hover,
+#rlogin:hover {
+    text-decoration: underline;
+}

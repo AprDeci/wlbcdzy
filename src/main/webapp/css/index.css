@@ -1,0 +1,138 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.about{
+    height: 350px;
+}
+.about div:first-child{
+    box-shadow: 0 0 8px 0;
+    width: 80vw;
+    height: 350px;
+    position: relative;
+    top: -50px;
+    left: 10vw;
+    background-color: white;
+}
+#aboutimg{
+    box-shadow: 0 0 8px 0;
+    width: 35%;
+    height: 100%;
+    position:relative;
+    left: 0;
+    top: 0;
+}
+
+#abouttext{
+    width: calc(65% - 20px);
+    height: calc(100% - 20px);
+    position: relative;
+    left:35% ;
+    top: -355px;
+    padding: 10px;
+}
+#about-title{
+    margin: 0 0 10px 20px;
+}
+.MORE{
+    font-size: 1.3rem;
+    text-decoration: solid underline orange 3px;
+    position: relative;
+    left: 65%;
+    cursor: pointer;
+}
+.column-title{
+    font-size: 2.0rem;
+    font-weight: bold;
+    display: inline-block;
+}
+.news{
+    background-color: rgb(255, 252, 246);
+    width: 100vw;
+    height: 300px;
+}
+.news span:nth-child(1){
+    position: relative;
+    left: 10%;
+}
+.news span:nth-child(2){
+    position: relative;
+    left: 75%;
+}
+.newscontainer{
+    width: 550px;
+    height: 250px;
+    background-color: rgba(60, 60, 60, 0.789);
+}
+#news-one{
+    position: relative;
+    left: 10%;
+}
+.newscontainer img{
+    width: 50%;
+    height: 100%;
+    display: inline;
+}
+.newscontainer div{
+    position: relative;
+    left: 50%;
+    top: -100%;
+    height: 100%;
+    width: 50%;
+
+}
+.newscontainer div p{
+    color: white;
+    margin-left: 10px;
+}
+.newscontainer div p:nth-child(1){
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+#news-two{
+    position: relative;
+    right: calc(-20% - 550px);
+    top: -250px;
+}
+.products{
+    width: 100vw;
+    height: 350px;
+}
+.products span:nth-child(1){
+    position: relative;
+    left: 10%;
+}
+.products span:nth-child(2){
+    position: relative;
+    left: 75%;
+}
+.product{
+    width: 400px;
+    height: 300px;
+}
+.product p{
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+}
+.product img{
+    width: 100%;
+    height: 270px;
+}
+#product-one{
+    position: relative;
+    left: 10%;
+}
+#product-two{
+    position: relative;
+    left: calc(35% + 20px);
+    top: -300px;
+}
+#product-three{
+    position: relative;
+    left: calc(60% + 20px);
+    top: -600px;
+}
+
