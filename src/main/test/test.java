@@ -4,8 +4,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
 import top.aprdec.mapper.usermapper;
 import top.aprdec.pojo.news;
+import top.aprdec.pojo.product;
 import top.aprdec.pojo.user;
 import top.aprdec.service.newsService;
+import top.aprdec.service.productService;
 import top.aprdec.service.userService;
 import top.aprdec.util.SqlSessionFactoryutil;
 
@@ -54,5 +56,13 @@ public class test {
             System.out.println(news1.toString());
         }
 
+    }
+    @Test
+    public void testproductselectrand(){
+        productService productservice = new productService();
+        List<product> products = productservice.selectrand();
+        for (product prodcut: products) {
+            System.out.println(prodcut.toString());
+        }
     }
 }

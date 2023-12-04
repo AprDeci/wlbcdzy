@@ -3,7 +3,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% List<news> newsList = (List<news>) request.getAttribute("newslist");
 List<String> typeList = (List<String>) request.getAttribute("types");%>
-<%--<%request.setCharacterEncoding("utf-8"); %>--%>
 <html>
 <head>
     <title>新闻信息</title>

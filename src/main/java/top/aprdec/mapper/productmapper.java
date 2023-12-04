@@ -16,6 +16,10 @@ public interface productmapper {
     List<product> selectBytype(String type);
 
     @Select("select distinct type from product")
-    List<String> selectBytype();
+    List<String> selecttype();
+
+    @Select("select * from product order by rand() limit 3")
+    List<product> selectrand();
+
 
 }

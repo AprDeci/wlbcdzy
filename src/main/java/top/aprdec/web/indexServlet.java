@@ -2,6 +2,7 @@ package top.aprdec.web;
 
 import top.aprdec.pojo.essay;
 import top.aprdec.pojo.news;
+import top.aprdec.pojo.product;
 import top.aprdec.service.*;
 
 import javax.servlet.*;
@@ -21,6 +22,10 @@ public class indexServlet extends HttpServlet {
         newsService newsService = new newsService();
         List<news> news = newsService.selectByPage(0, 2);
         request.setAttribute("news", news);
+
+        productService productservice = new productService();
+        List<product> products = productservice.selectrand();
+        request.setAttribute("products", products);
 
         request.getRequestDispatcher("index.jsp").forward(request,response);
     }

@@ -43,34 +43,64 @@ li{
 }
 li a{
     text-decoration: none;
-    color: black;
     font-size: large;
-}
-.details img{
-    width: 400px;
-    height: 300px;
-    margin: 20px;
+    color: black;
     position: relative;
-
 }
-.intro{
+li a::after {
+    content: '';
     position: absolute;
-    left: 430px;
-    top: 80px;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: orange;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
-.intro p{
+
+li a:hover::after {
+    transform: scaleX(1);
+}
+.productttt {
+    height: 270px;
+    display: flex;
+    align-items: center;
+    border-bottom: gray 1px solid;
+}
+
+.productttt img {
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+}
+
+.details {
+    margin-left: 20px;
+}
+
+.details p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.details #name {
+    font-weight: bold;
+}
+
+.details #price {
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 115, 0);
+}
+
+.details #sales {
+    margin-left: 10px;
+    font-size: 14px;
     color: gray;
-    font-size: 1.5rem;
-    margin-bottom: 20px;
 }
-.xiangqing{
-    margin: 20px;
-}
-.xiangqing p:first-child{
-    color: orange;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-.xiangqing p:nth-last-child(1){
-    font-size: 1.2rem;
+.details a{
+    text-decoration: none;
+    color: black;
 }

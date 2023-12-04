@@ -8,6 +8,8 @@
             width: 100vw;
             height: 400px;
             background: rgb(251, 171, 80);
+            position: relative;
+            top: 114px;
 
         }
         .footer a{

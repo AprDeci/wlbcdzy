@@ -35,11 +35,19 @@ public class productService {
         return selectBytype;
     }
 
-    public List<String> selectBytype(){
+    public List<String> selecttype(){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         productmapper productmapper = sqlSession.getMapper(productmapper.class);
-        List<String> selectBytype = productmapper.selectBytype();
+        List<String> selectBytype = productmapper.selecttype();
         sqlSession.close();
         return selectBytype;
+    }
+
+    public List<product> selectrand(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        productmapper productmapper = sqlSession.getMapper(productmapper.class);
+        List<product> selectrand = productmapper.selectrand();
+        sqlSession.close();
+        return selectrand;
     }
 }

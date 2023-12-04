@@ -66,7 +66,7 @@
         window.location.href = "login.jsp"
     })
     document.querySelector("#products-p").addEventListener("click",function(){
-        window.location.href = "product.jsp"
+        window.location.href = "/productServlet?type=电器"
     })
     document.querySelector("#news-p").addEventListener("click",function(){
         window.location.href = "/newsServlet?type=推荐"

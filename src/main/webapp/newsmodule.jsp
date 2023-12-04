@@ -10,7 +10,6 @@
   String img = request.getParameter("img");
   String title = request.getParameter("title");
   String text = request.getParameter("text").substring(0,25)+"......";
-
 %>
 </head>
 <body>
