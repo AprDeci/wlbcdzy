@@ -4,17 +4,26 @@ public class news {
     String img;
     String title;
     String text;
-    String id;
+    int id;
+    String type;
 
     public news() {
     }
 
-    public news(String img, String title, String text, String id) {
+    public news(String img, String title, String text,String type) {
         this.img = img;
         this.title = title;
-        this.text = text;
-        this.id = id;
+        this.text=text;
+        this.type = type;
     }
+    public  news(int id,String img, String title, String text,String type) {
+        this.img = img;
+        this.title = title;
+        this.text=text;
+        this.type = type;
+        this.id=id;
+    }
+
 
     /**
      * 获取
@@ -68,7 +77,7 @@ public class news {
      * 获取
      * @return id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -76,12 +85,28 @@ public class news {
      * 设置
      * @param id
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
     public String toString() {
-        return "news{img = " + img + ", title = " + title + ", text = " + text + ", id = " + id + "}";
+        return "news{img = " + img + ", title = " + title + ",type ="+type+", text = " + text + ", id = " + id + "}";
+    }
+
+    /**
+     * 获取
+     * @return type
+     */
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * 设置
+     * @param type
+     */
+    public void setType(String type) {
+        this.type = type;
     }
 }
 

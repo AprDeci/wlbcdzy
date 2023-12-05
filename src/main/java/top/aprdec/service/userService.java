@@ -4,6 +4,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import top.aprdec.mapper.usermapper;
 import top.aprdec.util.SqlSessionFactoryutil;
 import top.aprdec.pojo.user;
+
+import java.util.List;
+
 public class userService {
     SqlSessionFactory sqlSessionFactory = SqlSessionFactoryutil.getSqlSessionFactory();
 
@@ -13,8 +16,8 @@ public class userService {
         try {
             usermapper.add(user);
             sqlSession.commit();
-            System.out.println("注册成功");
             sqlSession.close();
+            System.out.println("注册成功");
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("注册失败");
@@ -46,5 +49,21 @@ public class userService {
         }
         return user;
 
+    }
+
+    public List<user> selectAll(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        usermapper usermapper = sqlSession.getMapper(usermapper.class);
+        List<user> select = usermapper.selectall();
+        sqlSession.close();
+        return select;
+    }
+
+    public void updateByid(user user){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        usermapper usermapper = sqlSession.getMapper(usermapper.class);
+        usermapper.updateByid(user);
+        sqlSession.commit();
+        sqlSession.close();
     }
 }

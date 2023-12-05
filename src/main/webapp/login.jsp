@@ -13,12 +13,12 @@
         <form action="/loginServlet">
             <p style="color:red"><%= errormessage %></p>
             <span>用户名</span>
-            <input type="text" name="username"  placeholder="请输入用户名" value="<c:out value="${cookie.username.value}" />">
+            <input type="text" name="username"  placeholder="请输入用户名" value="${cookie.username.value}">
             <br/>
             <span>密码</span>
-            <input type="password" name="password"  placeholder="请输入密码" value="<c:out value="${cookie.password.value}" />"><br/>
+            <input type="password" name="password"  placeholder="请输入密码" value="${cookie.password.value}"><br/>
             <span>验证码</span>
-            <input type="text" name="captcha"><img src="<c:url value="/captcha"/>" width="130px" height="48px" />
+            <input type="text" name="captcha"><img id="captcha" src="<c:url value="/captcha?a=1"/>" width="130px" height="48px" />
             <c:set var="remember" value="${cookie.remember.value}" />
             <input type="checkbox" name="remember" checked="${remember == 'on' ? 'checked' : ''}"><span>记住我</span>
             <input type="checkbox" name="autologin" ><span>自动登录</span><br/>
@@ -49,6 +49,9 @@
     document.querySelector("#lregister").addEventListener("click",function(){
         document.querySelector("#login").style.display = "none"
         document.querySelector("#register").style.display="block"
+    })
+    document.querySelector("#captcha").addEventListener("click",function(){
+        document.querySelector("#captcha").src = "/captcha?a="+Math.random()
     })
 </script>
 </html>

@@ -16,20 +16,10 @@ import java.util.List;
 public class test {
 
     @Test
-    public void testregister(){
-        String username = "wlbcdzy";
-        String password = "wlbcdzy";
-        SqlSessionFactory sqlSessionFactory = SqlSessionFactoryutil.getSqlSessionFactory();
-        SqlSession sqlSession = sqlSessionFactory.openSession();
-        usermapper usermapper = sqlSession.getMapper(usermapper.class);
-        try {
-            user user = new user(username, password, 1);
-            System.out.println("注册成功");
-            sqlSession.close();
-        }catch(Exception e){
-            e.printStackTrace();
-            System.out.println("注册失败");
-        }
+    public void testuseradd(){
+        userService userservice = new userService();
+        user user = new user("test","test","管理");
+        userservice.add(user);
     }
     @Test
     public void testselect(){
@@ -63,5 +53,11 @@ public class test {
         for (product prodcut: products) {
             System.out.println(prodcut.toString());
         }
+    }
+    @Test
+    public void testnewsadded(){
+        newsService newsservice = new newsService();
+        news news = new news("img","测试案例","text","推荐");
+        newsservice.add(news);
     }
 }

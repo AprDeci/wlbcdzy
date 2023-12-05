@@ -22,7 +22,7 @@ public class registerServlet extends HttpServlet {
         usermapper usermapper = sqlSession.getMapper(usermapper.class);
         try {
             System.out.println(username+"----"+password);
-            usermapper.add(new user(username, password, 1));
+            usermapper.add(new user(username, password, "1"));
             System.out.println("注册成功");
             sqlSession.close();
             response.sendRedirect("login.html");

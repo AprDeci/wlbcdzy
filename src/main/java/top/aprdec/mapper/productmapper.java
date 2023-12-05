@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface productmapper {
     @Select("select * from product")
-    List<product> select();
+    List<product> selectall();
 
     @Select("select * from product where id = #{id}")
     product selectByid(String id);

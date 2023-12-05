@@ -11,10 +11,10 @@ import java.util.List;
 public class productService {
     SqlSessionFactory sqlSessionFactory = SqlSessionFactoryutil.getSqlSessionFactory();
 
-    public List<product> select(){
+    public List<product> selectall(){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         productmapper productmapper = sqlSession.getMapper(productmapper.class);
-        List<product> select = productmapper.select();
+        List<product> select = productmapper.selectall();
         sqlSession.close();
         return select;
     }

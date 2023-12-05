@@ -23,12 +23,23 @@ public class loginServlet extends HttpServlet {
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
         user user = userservice.selectByusername(username, password);
-        if(user == null) {
-            request.setAttribute("error", "用户名或密码错误");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+    if(user == null) {
+        request.setAttribute("error", "用户名或密码错误");
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+    }
+    //登录成功
+        //是否记住密码
+        if (remember==null||!remember.equals("on")){
+            response.addCookie(new Cookie("username",null));
+            response.addCookie(new Cookie("password",null));
+            response.addCookie(new Cookie("remember",null));
+        }else{
+            response.addCookie(new Cookie("username",username));
+            response.addCookie(new Cookie("password",password));
+            response.addCookie(new Cookie("remember",remember));
         }
-        request.getSession().setAttribute("user", user);
-        request.getRequestDispatcher("/indexServlet").forward(request, response);
+        request.setAttribute("identity",user.getIdentity());
+        request.getRequestDispatcher("index.jsp").forward(request, response);
 
 
 

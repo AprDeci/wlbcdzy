@@ -1,14 +1,22 @@
 package top.aprdec.pojo;
 
 public class user {
+    String id;
     String username;
     String password;
-    int identity; //身份 1-普通用户 2-vip 3-管理员
+    String identity;
 
     public user() {
     }
 
-    public user(String username, String password, int identity) {
+    public user(String username, String password, String identity) {
+        this.username = username;
+        this.password = password;
+        this.identity = identity;
+    }
+
+    public user(String id, String username, String password, String identity) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.identity = identity;
@@ -50,7 +58,7 @@ public class user {
      * 获取
      * @return identity
      */
-    public int getIdentity() {
+    public String getIdentity() {
         return identity;
     }
 
@@ -58,11 +66,27 @@ public class user {
      * 设置
      * @param identity
      */
-    public void setIdentity(int identity) {
+    public void setIdentity(String identity) {
         this.identity = identity;
     }
 
     public String toString() {
         return "user{username = " + username + ", password = " + password + ", identity = " + identity + "}";
+    }
+
+    /**
+     * 获取
+     * @return id
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * 设置
+     * @param id
+     */
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>可编辑表格</title>
+    <style>
+        /* 表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* 可编辑单元格样式 */
+        .editable {
+            background-color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <table id="editableTable">
+        <tr>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>身份</th>
+        </tr>
+        <tr>
+            <td class="editable" dataid="1">John Doe</td>
+            <td class="editable" dataid="1">password123</td>
+            <td class="editable" dataid="1">管理员</td>
+        </tr>
+        <tr>
+            <td class="editable">Jane Smith</td>
+            <td class="editable">abc123</td>
+            <td class="editable">普通用户</td>
+        </tr>
+    </table>
+
+    <script>
+        const table = document.getElementById("editableTable");
+        const cells = table.getElementsByClassName("editable");
+
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].addEventListener("dblclick", function() {
+                this.setAttribute("contenteditable", "true");
+                this.focus();
+            });
+
+            cells[i].addEventListener("blur", function() {
+                this.removeAttribute("contenteditable");
+                let id = this.getAttribute("dataid");
+                const elements = document.querySelectorAll('.editable[dataid="' + id + '"]');
+                let name = elements[0].innerText;
+                let password = elements[1].innerText;
+                let identity = elements[2].innerText;
+                console.log(id+name+password+identity);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -18,6 +18,14 @@ public class newsService{
         return select;
     }
 
+    public List<news> selectAll(){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        newsmapper newsmapper = sqlSession.getMapper(newsmapper.class);
+        List<news> selectAll = newsmapper.selectAll();
+        sqlSession.close();
+        return selectAll;
+    }
+
     public news selectById(int id){
         SqlSession sqlSession = sqlSessionFactory.openSession();
         newsmapper newsmapper = sqlSession.getMapper(newsmapper.class);
@@ -46,5 +54,19 @@ public class newsService{
         List<news> selectByPage = newsmapper.selectByPage(start, end);
         sqlSession.close();
         return selectByPage;
+    }
+    public void add(news news){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        newsmapper newsmapper = sqlSession.getMapper(newsmapper.class);
+        newsmapper.add(news);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+    public void updateByid(news news){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        newsmapper newsmapper = sqlSession.getMapper(newsmapper.class);
+        newsmapper.updateByid(news);
+        sqlSession.commit();
+        sqlSession.close();
     }
 }
