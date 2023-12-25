@@ -1,7 +1,7 @@
 package top.aprdec.pojo;
 
 public class product {
-    String id;
+    int id;
     String img;
     String name;
     String type;
@@ -25,7 +25,7 @@ public class product {
         this.introduction = introduction;
     }
 
-    public product(String id, String img, String name, String type, String model, String function, double price, int sales, String introduction) {
+    public product(int id, String img, String name, String type, String model, String function, double price, int sales, String introduction) {
         this.id = id;
         this.img = img;
         this.name = name;
@@ -166,14 +166,14 @@ public class product {
     }
 
     public String toString() {
-        return "product{img = " + img + ", name = " + name + ", type = " + type + ", model = " + model + ", function = " + function + ", price = " + price + ", sales = " + sales + ", introduction = " + introduction + "}";
+        return "product{id = " + id + ", img = " + img + ", name = " + name + ", type = " + type + ", model = " + model + ", function = " + function + ", price = " + price + ", sales = " + sales + ", introduction = " + introduction + "}";
     }
 
     /**
      * 获取
      * @return id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -181,7 +181,7 @@ public class product {
      * 设置
      * @param id
      */
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 }

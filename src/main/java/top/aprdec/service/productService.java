@@ -50,4 +50,13 @@ public class productService {
         sqlSession.close();
         return selectrand;
     }
+
+   public void update(product product){
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        productmapper productmapper = sqlSession.getMapper(productmapper.class);
+        productmapper.update(product);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
 }

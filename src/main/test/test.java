@@ -60,4 +60,10 @@ public class test {
         news news = new news("img","测试案例","text","推荐");
         newsservice.add(news);
     }
+    @Test
+    public void testproductupdate(){
+        productService productservice = new productService();
+        product product = new product(11,"aaaaa","测试案例","text","推荐","aaaaa",12.24,123,"bbb");
+        productservice.update(product);
+    }
 }

@@ -18,7 +18,7 @@
             <span>密码</span>
             <input type="password" name="password"  placeholder="请输入密码" value="${cookie.password.value}"><br/>
             <span>验证码</span>
-            <input type="text" name="captcha"><img id="captcha" src="<c:url value="/captcha?a=1"/>" width="130px" height="48px" />
+            <input type="text" name="captcha"><img id="captcha" src="<c:url value="/captcha"/>" width="130px" height="48px" />
             <c:set var="remember" value="${cookie.remember.value}" />
             <input type="checkbox" name="remember" checked="${remember == 'on' ? 'checked' : ''}"><span>记住我</span>
             <input type="checkbox" name="autologin" ><span>自动登录</span><br/>

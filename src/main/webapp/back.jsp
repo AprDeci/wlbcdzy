@@ -1,74 +1,101 @@
+<%@ page import="top.aprdec.pojo.user" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%String identity= (String) request.getAttribute("identity");
+if (identity==null){
+    request.setAttribute("error","请登录进入后台");
+    request.getRequestDispatcher("login.jsp").forward(request,response);
+}
+if(!identity.equals("管理员")){
+}%>
 <html>
 <head>
-    <title>$Title$</title>
+  <title>后台框架</title>
 </head>
-<body>
-<title>后台框架</title>
+
+
 <style>
-  *{
+  * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  /* 顶部栏样式 */
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+
   .topbar {
-    border: black solid 1px;
+    border: 1px solid black;
     height: 60px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    background-color: #007920;
   }
-
-  /* 容器样式 */
+  .topbar a{
+    color: white;
+    text-decoration: none;
+  }
+  .topbar a:nth-child(1){
+    position: relative;
+    right: 85%;
+  }
   .container {
     display: flex;
   }
 
-  /* 侧边栏样式 */
   .sidebar {
-    border: black solid 1px;
+    border: 1px solid black;
     color: #fff;
     width: 200px;
     height: 100vh;
     padding: 20px;
+    background-color: #007920;
   }
 
-  /* 功能区样式 */
   .content {
-    border: black solid 1px;
+    border: 1px solid black;
     flex: 1;
     padding: 20px;
+    background-color: #fff;
   }
 
-  /* iframe 样式 */
-  iframe {
+  .sidebar a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .sidebar a:hover {
+    background-color: #555;
+  }
+
+  .content iframe {
     border: none;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 100px);
   }
 </style>
 </head>
 <body>
 <div class="topbar">
-  <!-- 在这里放置顶部栏内容 -->
-  <a href="#">用户</a>
-  <a href="#">设置</a>
-  <a href="#">退出</a>
+  <a href="indexServlet">XX公司门户后台</a>
+  <a href="loginServlet">退出</a>
 </div>
 
 <div class="container">
   <div class="sidebar">
-    <!-- 在这里放置侧边栏内容 -->
-    <a href="dashboard.html" target="content-iframe">仪表盘</a>
     <a href="/backNewsServlet" target="content-iframe">新闻管理</a>
     <a href="/backProductServlet" target="content-iframe">产品管理</a>
     <a href="/backUserServlet" target="content-iframe">用户管理</a>
   </div>
 
   <div class="content">
-    <!-- 用于显示功能区内容的 iframe -->
-    <iframe src="dashboard.html" name="content-iframe"></iframe>
+    <iframe src="/backNewsServlet" name="content-iframe"></iframe>
   </div>
 </div>
 </body>

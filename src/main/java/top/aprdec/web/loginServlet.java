@@ -39,7 +39,7 @@ public class loginServlet extends HttpServlet {
             response.addCookie(new Cookie("remember",remember));
         }
         request.setAttribute("identity",user.getIdentity());
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        request.getRequestDispatcher("back.jsp").forward(request, response);
 
 
 

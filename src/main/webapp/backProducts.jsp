@@ -7,7 +7,7 @@
   <title>$Title$</title>
   <link rel="stylesheet" type="text/css" href="./css/backProducts.css">
 </head>
-<script src="../js/jquery.min.js"></script>
+<script src="./js/jquery.min.js"></script>
 <body>
 <table>
   <tr>
@@ -19,6 +19,7 @@
     <th>价格</th>
     <th>销量</th>
     <th>介绍</th>
+    <th>操作</th>
   </tr>
   <%for (product product:products){%>
   <tr>
@@ -29,7 +30,7 @@
     <td><%=product.getFunction()%></td>
     <td><%=product.getPrice()%></td>
     <td><%=product.getSales()%></td>
-    <td><%=product.getIntroduction().substring(0,50)+",,,"%></td>
+    <td><%=product.getIntroduction().length()>50?product.getIntroduction().substring(0,50)+",,,":product.getIntroduction()%></td>
     <td><button class="deletebt" dataid="<%=product.getId()%>">删除</button>
       <button class="changebt" dataid="<%=product.getId()%>">修改</button></td>
   </tr>
@@ -41,7 +42,7 @@
   <div class="modal-content">
     <span class="close">X</span>
     <h2>新闻修改</h2>
-    <form id="form" action="/newsupdate">
+    <form id="form" action="/productupdate" method="post">
       <input type="text" id="id" name="id">
       <div class="form-group">
         <label for="imgurl">图片链接地址:</label>
@@ -88,13 +89,19 @@
   for(let i = 0;i<changebts.length;i++){
     changebts[i].addEventListener("click",function () {
       let id = this.getAttribute("dataid")
-      $.get({url:"newsselect?id="+id,success:function (data) {
-          console.log(data)
+      $.get({url:"productselect?id="+id,success:function (dataJ) {
+        let data = JSON.parse(dataJ)
+        console.log(data)
+        console.log(data.img+data.title)
           $('#id').val(id)
           $('#imgurl').val(data.img)
-          $('#title').val(data.title)
-          $("#text").val(data.text)
+          $('#name').val(data.name)
           $('#type').val(data.type)
+          $('#model').val(data.model)
+          $('#price').val(data.price)
+          $('#sales').val(data.sales)
+          $('#intro').val(data.introduction)
+          $('#function').val(data.function)
         }})
       document.getElementById('modal').style.display = 'block';
     })

@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import top.aprdec.pojo.news;
+import top.aprdec.pojo.user;
 
 import java.util.List;
 
@@ -36,4 +37,5 @@ public interface newsmapper {
 
     @Update("update news set img=#{img},title=#{title},text=#{text},type=#{type} where id=#{id}")
     void updateByid(news news);
+
 }
